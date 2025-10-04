@@ -3,8 +3,14 @@ import { $ } from 'bun';
 import { existsSync } from 'fs';
 import { join } from 'path';
 
-const SSH_TARGET = 'robertotcestari@64.176.5.254';
-const REMOTE_PATH = '/opt/notificador';
+const SSH_TARGET = process.env.DEPLOY_SSH_TARGET || 'user@hostname';
+const REMOTE_PATH = process.env.DEPLOY_REMOTE_PATH || '/opt/notificador';
+
+if (!process.env.DEPLOY_SSH_TARGET) {
+  console.error('❌ Erro: Configure DEPLOY_SSH_TARGET no .env');
+  console.error('Exemplo: DEPLOY_SSH_TARGET=user@hostname');
+  process.exit(1);
+}
 
 const FILES_TO_DEPLOY = [
   'src/',
