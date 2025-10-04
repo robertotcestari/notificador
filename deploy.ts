@@ -86,7 +86,7 @@ if [ "\$ENV_CREATED" = "true" ]; then
     echo "ENV_NEEDS_CONFIG"
 fi
 `;
-  
+
   const setupResult = await $`ssh ${SSH_TARGET} ${setupScript}`.text();
 
   console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');

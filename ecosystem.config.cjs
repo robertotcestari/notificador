@@ -9,7 +9,7 @@ module.exports = {
       instances: 1,
       exec_mode: 'fork',
       autorestart: false,
-      cron_restart: '*/3 * * * *', // A cada 3 minutos
+      cron_restart: '*/5 * * * *', // A cada 5 minutos
       watch: false,
       max_memory_restart: '200M',
       env: {
