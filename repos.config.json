@@ -1,0 +1,14 @@
+{
+  "repos": [
+    "vercel/next.js",
+    "oven-sh/bun",
+    "facebook/react",
+    "microsoft/typescript",
+    "nodejs/node",
+    "openai/codex",
+    "github/copilot-cli",
+    "sst/opencode",
+    "vercel/ai",
+    "mastra-ai/mastra"
+  ]
+}

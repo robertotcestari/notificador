@@ -1,0 +1,30 @@
+{
+  "name": "ghrel",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run src/cli.ts --config-file repos.config.json",
+    "start:dry": "bun run src/cli.ts --config-file repos.config.json --dry-run",
+    "deploy": "bun run deploy.ts",
+    "build": "bun build --target=bun --outfile=dist/ghrel.js src/cli.ts",
+    "check": "bun run src/cli.ts --help",
+    "pm2:start": "pm2 start ecosystem.config.cjs",
+    "pm2:stop": "pm2 stop notificador-releases",
+    "pm2:restart": "pm2 restart notificador-releases",
+    "pm2:logs": "pm2 logs notificador-releases",
+    "pm2:status": "pm2 status notificador-releases"
+  },
+  "dependencies": {
+    "mailgun.js": "^12.1.0",
+    "nodemailer": "^6.9.14",
+    "resend": "^3.3.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@tsconfig/bun": "^1.0.2",
+    "@types/bun": "^1.0.8",
+    "@types/nodemailer": "^7.0.2",
+    "typescript": "^5.6.3"
+  }
+}
